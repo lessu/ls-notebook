@@ -1,0 +1,54 @@
+https://wiki.archlinux.org/index.php/silent_boot#fsck
+
+# Early KMS
+
+the font looks different when booting
+
+
+
+
+# Grub silent
+	Loading Linux linux
+	Loading initial ramdisk
+	
+	edit /etc/grub.d/10_linux
+	search Loading Linux / Ramdisk 
+	comment its echo command
+	
+	grub-mkconfig -o /boot/grub/grub.cfg
+	mkinitcpio -P
+
+
+	Welcome to Grub
+
+# Not to Print Linux Version
+	/etc/default/grub
+	quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
+	grub-mkconfig -o /boot/grub/grub.cfg
+	mkinitcpio -P
+
+
+# /dev/sda2 clean
+
+	fsck
+	To hide fsck messages during boot, let systemd check the root filesystem. For this, replace udev hook with systemd:
+	
+	HOOKS=( base systemd fsck ...) 
+	in /etc/mkinitcpio.conf and regenerate the initramfs.
+	
+	Now edit systemd-fsck-root.service and systemd-fsck@.service:
+	
+	# systemctl edit --full systemd-fsck-root.service
+	# systemctl edit --full systemd-fsck@.service
+	Configuring StandardOutput and StandardError like this:
+	
+	(...)
+	
+	[Service]
+	Type=oneshot
+	RemainAfterExit=yes
+	ExecStart=/usr/lib/systemd/systemd-fsck
+	StandardOutput=null
+	StandardError=journal+console
+	TimeoutSec=0
+	See this for more info on the options you can pass to systemd-fsck - you can change how often the service will check (or not) your filesystems.

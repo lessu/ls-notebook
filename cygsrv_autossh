@@ -1,0 +1,14 @@
+实验命令
+/usr/bin/autossh -M 16142 -NR 16182:localhost:22 -o stricthostkeychecking=no lessu@home.nutsapp.com
+
+添加服务
+cygrunsrv.exe -I cyg_ssh_to_ls_remote -p /usr/bin/autossh -a '-M 16142 -NR 16182:localhost:22 -o stricthostkeychecking=no lessu@home.nutsapp.com' -y tcpip
+
+修改
+添加晚修改登录用户（不能是系统用户）
+
+有问题 查看log
+cat /var/log/cyg_ssh_to_ls_remote.log
+
+
+autossh -M 16149 -NR 16189:localhost:4444 -o stricthostkeychecking=no lessu@home.nutsapp.com

@@ -1,0 +1,6 @@
+1 confict with i918 initiocpio ( no )
+2 splash then quiet in linux  command line
+3 systemctl enable sddm-plymouth.service instead of sddm.service
+
+
+                linux   /boot/vmlinuz-linux root=UUID=b706c62b-60b0-4f5e-b852-e28f5d75546b rw  splash quiet loglevel=3 rd.udev.log-priority=3 video=eDP-1:panel_orientation=right_side_up

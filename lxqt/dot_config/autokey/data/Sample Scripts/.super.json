@@ -1,0 +1,28 @@
+{
+    "type": "script",
+    "description": "super",
+    "store": {},
+    "modes": [],
+    "usageCount": 0,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [
+            "<super>"
+        ],
+        "hotKey": "<backspace>"
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

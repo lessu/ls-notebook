@@ -1,0 +1,18 @@
+# V2ray
+## core
+pacman -S v2ray
+
+## gui
+pacman -s qv2ray
+
+
+## proxy
+console
+sudo pacman -S proxychains
+然后去改proxychains的配置文件/etc/proxychains.conf
+最后一行改为socks5 127.0.0.1 1080
+
+GUI
+Session内添加 
+HTTP_PROXY=http://127.0.0.1:8889
+HTTPS_PROXY=http://127.0.0.1:8889

@@ -1,0 +1,23 @@
+ #font 
+	 Fira Mono
+	 Abobe Source Han Sans CN
+	 aur nerd-fonts-ubuntu-mono
+	 
+	 
+	 
+	##CONSOLE
+		pacman -S terminus-font
+		setfont /usr/share/kbd/consolefonts/ter-116n.psf.gz
+		or
+		setfont ter-116n
+
+		### save
+			vim /etc/vconsole.conf
+			FONT=ter-116n
+
+		### Early Userspace
+			use consolefont hook in /etc/mkinitcpio.conf ( ADD consolefont in HOOK = (base ...))
+			then mkinitcpio
+			sd-vconsole for systemd(if replace udev -> systemd,see <Slient Boot>)
+
+

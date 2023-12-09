@@ -1,0 +1,31 @@
+{
+    "usageCount": 10, 
+    "omitTrigger": false, 
+    "prompt": false, 
+    "description": "meta+w", 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [], 
+        "immediate": false, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "hotkey": {
+        "hotKey": "w", 
+        "modifiers": [
+            "<super>"
+        ]
+    }, 
+    "modes": [
+        3
+    ], 
+    "showInTrayMenu": false, 
+    "matchCase": false, 
+    "filter": {
+        "regex": "qterminal.qterminal", 
+        "isRecursive": false
+    }, 
+    "type": "phrase", 
+    "sendMode": "kb"
+}

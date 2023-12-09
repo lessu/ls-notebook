@@ -1,0 +1,23 @@
+# hdmi setting
+## boot/config.txt
+	hdmi_force_hotplug=1
+	hdmi_drive=2
+	hdmi_group=2
+	hdmi_mode=87
+	hdmi_cvt 480 320 60 6 0 0 0
+
+# touchscreen ads7846
+## boot/config.txt
+	dtoverlay=ads7846,cs=0,penirq=25,penirq_pull=2,speed=10000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=199,xmax=3999,ymin=199,ymax=3999
+
+## xinput
+	1.using evdev first,`apt install evdev`
+	2.copy config `sudo cp -rf /usr/share/X11/xorg.conf.d/10-evdev.conf /usr/share/X11/xorg.conf.d/45-evdev.conf`
+	3.calibrate,`apt install xinput_calibrator`
+	4.copy the screen output to `/usr/share/X11/xorg.conf.d/99-calibration.conf`
+
+
+
+# Note
+## control X through ssh
+	`export DISPLAY=:0`

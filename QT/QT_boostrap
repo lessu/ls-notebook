@@ -1,0 +1,14 @@
+# Start from commandline without IDE
+https://changecase.net/blog/2015/12/31/create-qml-apps-without-qt-creator-on-osx/
+
+
+https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html
+
+
+# QMAKE pro  
+in your .pro file: QMAKE_CXXFLAGS and QMAKE_CFLAGS.
+HERE you can find the qmake reference
+https://doc.qt.io/qt-5/qmake-variable-reference.html
+
+#Build With Cmake
+https://doc.qt.io/qt-5/cmake-manual.html

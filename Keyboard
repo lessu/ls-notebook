@@ -1,0 +1,39 @@
+# sticky key
+	#x org
+
+	xkbset
+	https://www.emacswiki.org/emacs/StickyModifiers#toc9
+	
+	
+	xkbset sticky -twokey latchlock
+	* sticky : press shift/ctrl/alt then release then press other key will act as same as press together
+	* twokey: press two keys together will cancel sticky permently
+	* latchlock: press modkey twice will lock mod key state
+	
+	sticky will auto disabled after certain second to disable it run the commands below
+	xkbset exp 1 =sticky ## don't expire sticky keys
+	
+	if sticky or lock get chaos, a script should be writen to reset them(todo)
+	
+	https://wiki.archlinux.org/index.php/Accessibility
+	https://unix.stackexchange.com/questions/572212/timeout-for-sticky-keys
+	
+# mapkey
+	#xorg
+		https://wiki.archlinux.org/index.php/Xmodmap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+		xmodmap -e "keycode 110 = Next"
+		xev to check keycode
+		change mod key needs to remove then add
+		xmodmap -e "add shift = Shift_R" # Make the new Shift key actually do shifting
+		xmodmap -e "clear shift = Up" # Prevent the old Shift key from shifting
+		
+	# tty
+		loadkey
+	
+	#gui level
+		autokey
+	
+	#map caps lock to esc
+		xmodmap -e "clear lock"
+		xmodmap -e "keycode 66 = Escape Escape Escape Escape"
+	

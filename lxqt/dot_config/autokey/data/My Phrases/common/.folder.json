@@ -1,0 +1,23 @@
+{
+    "usageCount": 35, 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [], 
+        "immediate": false, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "modes": [], 
+    "title": "common", 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "filter": {
+        "regex": "^((?!qterminal).)*$", 
+        "isRecursive": false
+    }, 
+    "type": "folder", 
+    "showInTrayMenu": false
+}

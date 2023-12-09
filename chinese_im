@@ -1,0 +1,9 @@
+https://zhuanlan.zhihu.com/p/74931620
+sudo pacman -S fcitx-lilydjwg-git fcitx-qt5 fcitx-configtool
+yay fcitx-sogoupinyin
+
+Session 添加
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS="@im=fcitx"

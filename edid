@@ -1,0 +1,29 @@
+# ok in windows
+read by windows
+1.edid viewer
+2.and convert to bin https://tomeko.net/online_tools/hex_to_file.php?lang=en
+3.cp to /lib/firmware/edid ( create )
+4.vim /etc/default/grub 
+    drm.edid_firmware=eDP-1:edid/xxxx.bin
+    
+# create by guessing ( may not accurate )
+git edid-generator-master
+prepare 
+edit edid-generator-master
+remove ratio unknown cause exit
+
+1.get Modeline info by cvt 800 12800 
+2.echo Modeline "800x1280"   92.50  800 864 944 1088  1280 1283 1293 1330 -hsync +vsync | ./modeline2edid
+2.a edit 800x1280.S ,edit ratio
+3.create bin by make
+
+# create by read datasheet
+get "Documentation/EDID"(eg https://elixir.bootlin.com/linux/v4.14/source/Documentation/EDID)
+
+find timing value
+
+and create resolution.S, tweak value.
+and make
+
+
+

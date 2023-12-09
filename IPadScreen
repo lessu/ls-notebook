@@ -1,0 +1,22 @@
+VNC
+https://wiki.archlinux.org/index.php/TigerVNC_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+
+2nd screen
+https://kbumsik.io/using-ipad-as-a-2nd-monitor-on-linux
+
+
+
+TCP through USB
+https://stackoverflow.com/questions/52166569/ios-tcp-ip-over-usb-with-linux-side
+
+You can connect to a TCP socket running on your iPhone over USB using iproxy. It is part of libusbmuxd.
+
+If you're on Linux, your best bet is to install https://github.com/libimobiledevice/libplist/, https://github.com/libimobiledevice/libusbmuxd and https://github.com/libimobiledevice/libimobiledevice from source.
+
+Once your iPhone trusts your PC, you can run iproxy [device port] [PC port]. Any connection to localhost:[PC port] will then be forwarded to the [device port] running on your iOS device.
+
+
+ sudo pacman -S usbmuxd
+
+sudo pacman -S libplist

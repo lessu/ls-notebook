@@ -1,0 +1,48 @@
+# basic
+install net-tools
+install dhcpcd
+install iwd
+
+
+# Wifi
+## wpa_supplicant
+install 
+wpa_supplicant
+https://wiki.archlinux.org/index.php/Wpa_supplicant
+
+## iwd
+install
+pacman -S iwd
+
+service start iwd
+
+iwdctl
+>device list
+>station wlan scan
+>station wlan get networks
+>station wlan connect SSID
+>station wlan0 show
+for more
+>help 
+
+
+
+
+# set static ip 
+	using systemd-networkd
+	https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_a_static_IP
+
+
+	/etc/systemd/network/20-wired.network
+		[Match]
+		Name=enp1s0
+
+		[Network]
+		Address=10.1.10.9/24
+		Gateway=10.1.10.1
+		DNS=10.1.10.1
+		#DNS=8.8.8.8
+
+
+	systemctl enable systemd-networkd.service
+	systemctl start systemd-networkd.service

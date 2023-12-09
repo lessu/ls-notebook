@@ -1,0 +1,37 @@
+power on after boot
+	https://wiki.archlinux.org/index.php/Bluetooth#Auto_power-on_after_boot
+	
+# Core
+bluez bluez-utils
+
+# OnStart 
+systemctl enable bluetooth
+systemctl start bluetooth
+
+# front end
+blueman 
+
+
+# Control
+	bluetoothctl
+
+
+#privilege dialog when login 
+	https://slackalaxy.com/2018/08/06/blueman-rfkill-state/
+	
+	/* Allow users in netdev group to use blueman feature requiring root without authentication */
+	polkit.addRule(function(action, subject) {
+    	if ((action.id == "org.blueman.network.setup" ||
+         	action.id == "org.blueman.dhcp.client" ||
+         	action.id == "org.blueman.rfkill.setstate" ||
+         	action.id == "org.blueman.pppd.pppconnect") &&
+        	subject.isInGroup("EDIT_THIS")) {
+        	return polkit.Result.YES;
+    	}
+	});
+	
+	EDIT_THIS to group,eg "wheel"
+	
+
+# Audio
+pulseaudio-bluetooth
